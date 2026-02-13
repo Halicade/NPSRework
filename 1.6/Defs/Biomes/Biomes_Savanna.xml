@@ -217,6 +217,8 @@
             <ZSL_WaterSlime MayRequire="zylle.slimes">0.01</ZSL_WaterSlime>
             <ZTT_SandshellTurtle MayRequire="zylle.turtles">0.3</ZTT_SandshellTurtle>
             <ZTT_Toughback MayRequire="zylle.turtles">0.03</ZTT_Toughback>
+            <ssEFP_DwarfElephant MayRequire="sneezingseal.extinctfaunapack.cenozoic">0.16</ssEFP_DwarfElephant>
+            <Basilisk MayRequire="zal.basilisk">0.03</Basilisk>
         </wildAnimals>
         <pollutionWildAnimals>
             <Rat>1.0</Rat>

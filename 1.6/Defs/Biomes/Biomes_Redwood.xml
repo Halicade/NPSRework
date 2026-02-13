@@ -269,6 +269,7 @@
             <ZTT_Plasturtle MayRequire="zylle.turtles">0.05</ZTT_Plasturtle>
             <ZTT_Toughback MayRequire="zylle.turtles">0.05</ZTT_Toughback>
             <ZTT_Steelshell MayRequire="zylle.turtles">0.03</ZTT_Steelshell>
+            <Meowl_Kind MayRequire="tolgrim.meowl.race">0.1</Meowl_Kind>
         </wildAnimals>
         <pollutionWildAnimals>
             <Boomalope>0.1</Boomalope>

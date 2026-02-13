@@ -198,6 +198,7 @@
             <ZTT_Plasturtle MayRequire="zylle.turtles">0.01</ZTT_Plasturtle>
             <ZTT_Toughback MayRequire="zylle.turtles">0.15</ZTT_Toughback>
             <ZTT_Steelshell MayRequire="zylle.turtles">0.02</ZTT_Steelshell>
+            <Basilisk MayRequire="zal.basilisk">0.05</Basilisk>
         </wildAnimals>
         <pollutionWildAnimals>
             <Boomalope>0.1</Boomalope>
