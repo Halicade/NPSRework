@@ -305,6 +305,7 @@
     <affordances>
       <li>Light</li>
       <li>Diggable</li>
+      <li>Bridgeable</li>
     </affordances>
     <generatedFilth>Filth_Sand</generatedFilth>
     <filthAcceptanceMask />
@@ -362,18 +363,14 @@
     <waterDepthShader>Map/WaterDepth</waterDepthShader>
     <renderPrecedence>396</renderPrecedence>
     <driesTo/>
-    <canFreeze>false</canFreeze>
     <waterBodyType>Saltwater</waterBodyType>
     <temporary>true</temporary>
-    <tempTerrain>
-      <replaceableByBridge>true</replaceableByBridge>
-    </tempTerrain>
     <tags>
       <li>Ocean</li>
     </tags>
   </TerrainDef>
   
-  <TerrainDef ParentName="WaterShallowBase">
+  <TerrainDef ParentName="WaterShallow">
     <defName>NPS_WaterRiverFlood</defName>
     <label>tidal water</label>
     <texturePath>Terrain/Surfaces/WaterShallowRamp</texturePath>
@@ -381,15 +378,7 @@
     <waterDepthShader>Map/WaterDepth</waterDepthShader>
     <renderPrecedence>396</renderPrecedence>
     <driesTo/>
-    <canFreeze>false</canFreeze>
-    <waterBodyType>Other</waterBodyType>
     <temporary>true</temporary>
-    <tempTerrain>
-      <replaceableByBridge>true</replaceableByBridge>
-    </tempTerrain>
-    <tags>
-      
-    </tags>
   </TerrainDef>
   
   <TerrainDef ParentName="NaturalTerrainBase">
@@ -436,7 +425,7 @@
     <tags>
       <li>Wet</li>
       <li>WetFlood</li>
-        <li>Riverbank</li>
+      <li>Riverbank</li>
     </tags>
     <affordances>
       <li>Bridgeable</li>
