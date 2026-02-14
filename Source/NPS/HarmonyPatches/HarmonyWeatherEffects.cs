@@ -40,6 +40,9 @@ public class HarmonyWeatherEffects
 
         var harmony = new Harmony("Hali.NPS_WeatherEffects");
 
+        harmony.Patch(AccessTools.Method(typeof(UIRoot_Entry), nameof(UIRoot_Entry.Init)),
+            prefix: new HarmonyMethod(typeof(UIRootEntry_Init), nameof(UIRootEntry_Init.Prefix)));
+
         harmony.Patch(AccessTools.Method(typeof(BiomeDef), nameof(BiomeDef.CommonalityOfDisease)),
             prefix: new HarmonyMethod(typeof(BiomeDef_CommonalityOfDisease),
                 nameof(BiomeDef_CommonalityOfDisease.Prefix)));
