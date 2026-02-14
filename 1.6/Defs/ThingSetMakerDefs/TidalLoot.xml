@@ -154,6 +154,7 @@
                                     <li>Neutroamine</li>
                                     <li>Chemfuel</li>
                                     <li>Pemmican</li>
+                                    <li MayRequire="dankpyon.medieval.overhaul">DankPyon_IronIngot</li>
                                 </thingDefs>
                             </filter>
                             <countRange>25~74</countRange>
