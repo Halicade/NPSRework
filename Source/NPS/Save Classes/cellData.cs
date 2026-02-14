@@ -205,6 +205,8 @@ public class cellData : IExposable
         }
         // Verify the current tile does not have anything on it.
         // Then verify
+        if (currentTerrain.isFoundation)
+            return;
         if (location.GetEdifice(map) != null) 
             return;
         if (riverFocus.GetEdifice(map) != null) 
@@ -310,7 +312,7 @@ public class cellData : IExposable
     }
 
     private void leaveLoot() {
-        if (!EffectSettings.leaveStuff) {
+        if (!EffectSettings.leaveLoot) {
             return;
         }
 
@@ -323,7 +325,10 @@ public class cellData : IExposable
             }
 
             for (int i = 0; i < allowed.Count; i++) {
-                GenSpawn.Spawn(allowed[i], location, map);
+                var spawnedThing = GenSpawn.Spawn(allowed[i], location, map);
+                if (EffectSettings.forbidLoot) {
+                    spawnedThing.SetForbidden(true);
+                }
             }
         }
         else if (leaveSomething < 0.002f && (location.GetPlant(map) == null && location.GetCover(map) == null)) {
@@ -335,7 +340,7 @@ public class cellData : IExposable
                 if (!plantDef.CanEverPlantAt(location, map, checkMapTemperature: false))
                     continue;
                 var plant = (Plant)ThingMaker.MakeThing(plantDef);
-                plant.Growth = Rand.Range(0.07f, 1f);
+                plant.Growth = Rand.Range(0.7f, 1f);
                 if (plant.def.plant.LimitedLifespan) {
                     plant.Age = Rand.Range(0, Mathf.Max(plant.def.plant.LifespanTicks - 50, 0));
                 }
@@ -347,6 +352,9 @@ public class cellData : IExposable
     }
 
     private void clearLoot() {
+        if (!EffectSettings.leaveLoot) {
+            return;
+        }
         List<Thing> things = location.GetThingList(map);
 
         for (var i = things.Count - 1; i >= 0; i--) {

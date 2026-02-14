@@ -6,7 +6,8 @@ namespace TKKN_NPS;
 
 public class EffectSettings : ModSettings
 {
-    public static bool leaveStuff = true;
+    public static bool leaveLoot = true;
+    public static bool forbidLoot = true;
 
     public static bool spawnLavaOnlyInBiome = true;
     public static bool allowLavaEruption = true;
@@ -102,10 +103,17 @@ public class EffectSettings : ModSettings
                 ref doFloods,
                 "TKKN_doFloods_text".Translate());
         }
+
         list.CheckboxLabeled(
             "TKKN_leaveStuff_title".Translate(),
-            ref leaveStuff,
+            ref leaveLoot,
             "TKKN_leaveStuff_text".Translate());
+        if (leaveLoot) {
+            list.CheckboxLabeled(
+                "NPS_forbidLoot_title".Translate(),
+                ref forbidLoot,
+                "NPS_forbidLoot".Translate());
+        }
 
         list.Gap();
 
@@ -212,35 +220,36 @@ public class EffectSettings : ModSettings
     public override void ExposeData() {
         base.ExposeData();
 
-        Scribe_Values.Look(ref doWeather, "doWeather", true, true);
-        Scribe_Values.Look(ref cellsPerTick, "cellsPerTick", 5f, true);
-        Scribe_Values.Look(ref doDirtPath, "doDirtPath", true, true);
-        Scribe_Values.Look(ref allowPlantEffects, "allowPlantEffects", true, true);
-        Scribe_Values.Look(ref showRain, "showRain", true, true);
-        Scribe_Values.Look(ref makePuddles, "makePuddles", true, true);
-        Scribe_Values.Look(ref doTides, "doTides", true, true);
-        Scribe_Values.Look(ref doFloods, "doFloods", true, true);
-        Scribe_Values.Look(ref leaveStuff, "leaveStuff", true, true);
+        Scribe_Values.Look(ref doWeather, "doWeather", true);
+        Scribe_Values.Look(ref cellsPerTick, "cellsPerTick", 5f);
+        Scribe_Values.Look(ref doDirtPath, "doDirtPath", true);
+        Scribe_Values.Look(ref allowPlantEffects, "allowPlantEffects", true);
+        Scribe_Values.Look(ref showRain, "showRain", true);
+        Scribe_Values.Look(ref makePuddles, "makePuddles", true);
+        Scribe_Values.Look(ref doTides, "doTides", true);
+        Scribe_Values.Look(ref doFloods, "doFloods", true);
+        Scribe_Values.Look(ref leaveLoot, "leaveStuff", true);
+        Scribe_Values.Look(ref forbidLoot, "forbidLoot", true);
 
-        Scribe_Values.Look(ref doColdEffects, "doColdEffects", true, true);
-        Scribe_Values.Look(ref doIce, "doIce", true, true);
-        Scribe_Values.Look(ref doColdBreath, "doColdBreath", true, true);
-        Scribe_Values.Look(ref showFrostGrid, "showFrostGrid", true, true);
-        Scribe_Values.Look(ref useMapTemperature, "useMapTemperature", false, true);
-        Scribe_Values.Look(ref allowPawnEffects, "allowPawnEffects", true, true);
-        Scribe_Values.Look(ref pawnEffectsOnlyColonists, "pawnEffectsOnlyColonists", true, true);
-        Scribe_Values.Look(ref seasonalDiseases, "seasonalDiseases", true, true);
-        Scribe_Values.Look(ref seasonalIncidents, "seasonalIncidents", true, true);
-        Scribe_Values.Look(ref seasonalWeather, "seasonalWeather", true, true);
+        Scribe_Values.Look(ref doColdEffects, "doColdEffects", true);
+        Scribe_Values.Look(ref doIce, "doIce", true);
+        Scribe_Values.Look(ref doColdBreath, "doColdBreath", true);
+        Scribe_Values.Look(ref showFrostGrid, "showFrostGrid", true);
+        Scribe_Values.Look(ref useMapTemperature, "useMapTemperature", false);
+        Scribe_Values.Look(ref allowPawnEffects, "allowPawnEffects", true);
+        Scribe_Values.Look(ref pawnEffectsOnlyColonists, "pawnEffectsOnlyColonists", true);
+        Scribe_Values.Look(ref seasonalDiseases, "seasonalDiseases", true);
+        Scribe_Values.Look(ref seasonalIncidents, "seasonalIncidents", true);
+        Scribe_Values.Look(ref seasonalWeather, "seasonalWeather", true);
 
-        Scribe_Values.Look(ref allowPawnsToGetWet, "allowPawnsToGetWet", true, true);
-        Scribe_Values.Look(ref allowPawnsDrowning, "allowPawnsDrowning", true, true);
-        Scribe_Values.Look(ref allowPawnsSwim, "allowPawnsSwim", true, true);
-        Scribe_Values.Look(ref showDevReadout, "showDevReadout", false, true);
-        Scribe_Values.Look(ref spawnLavaOnlyInBiome, "spawnLavaOnlyInBiome", false, true);
-        Scribe_Values.Look(ref allowLavaEruption, "allowLavaEruption", true, true);
-        Scribe_Values.Look(ref regenCells, "regenCells", false, true);
-        Scribe_Values.Look(ref terrainAffectTemperature, "terrainAffectTemperature", false, true);
+        Scribe_Values.Look(ref allowPawnsToGetWet, "allowPawnsToGetWet", true);
+        Scribe_Values.Look(ref allowPawnsDrowning, "allowPawnsDrowning", true);
+        Scribe_Values.Look(ref allowPawnsSwim, "allowPawnsSwim", true);
+        Scribe_Values.Look(ref showDevReadout, "showDevReadout", false);
+        Scribe_Values.Look(ref spawnLavaOnlyInBiome, "spawnLavaOnlyInBiome", false);
+        Scribe_Values.Look(ref allowLavaEruption, "allowLavaEruption", true);
+        Scribe_Values.Look(ref regenCells, "regenCells", false);
+        Scribe_Values.Look(ref terrainAffectTemperature, "terrainAffectTemperature", false);
         
     }
 }

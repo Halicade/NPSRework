@@ -792,18 +792,24 @@ public class Watcher(Map map) : MapComponent(map)
                 continue;
             }
 
-            var waterCheck = AdjustForRotation(c, 0);
-            if (!waterCheck.InBounds(map)) {
+            var previousCell = AdjustForRotation(c, 0);
+            if (!previousCell.InBounds(map)) {
                 continue;
             }
 
             // Check if the previous tile is an ocean tile
             // If it isn't, check if the current tile is and remove it if so
-            if (!isOceanicTerrain(waterCheck.GetTerrain(map))) {
-                if (isOceanicTerrain(c.GetTerrain(map))) {
+            cell.currentTerrain = c.GetTerrain(map);
+            
+            if (!isOceanicTerrain(previousCell.GetTerrain(map))) {
+                if (isOceanicTerrain(cell.currentTerrain)) {
                     cell.decreaseTide();
                 }
 
+                continue;
+            }
+
+            if (cell.currentTerrain.isFoundation) {
                 continue;
             }
 
@@ -909,6 +915,8 @@ public class Watcher(Map map) : MapComponent(map)
             thing.TakeDamage(new DamageInfo(DamageDefOf.Rotting, damage, 0, 0));
         }
     }
+    
+    
 
     private bool isOceanicTerrain(TerrainDef terrain) {
         return terrain == RimWorld.TerrainDefOf.WaterOceanShallow ||
