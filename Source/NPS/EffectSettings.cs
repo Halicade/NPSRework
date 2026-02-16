@@ -105,14 +105,14 @@ public class EffectSettings : ModSettings
         }
 
         list.CheckboxLabeled(
-            "TKKN_leaveStuff_title".Translate(),
+            "NPS_leaveLoot_title".Translate(),
             ref leaveLoot,
-            "TKKN_leaveStuff_text".Translate());
+            "NPS_leaveLoot_text".Translate());
         if (leaveLoot) {
             list.CheckboxLabeled(
                 "NPS_forbidLoot_title".Translate(),
                 ref forbidLoot,
-                "NPS_forbidLoot".Translate());
+                "NPS_forbidLoot_text".Translate());
         }
 
         list.Gap();
