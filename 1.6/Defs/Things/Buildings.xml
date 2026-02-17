@@ -28,6 +28,9 @@
     <passability>PassThroughOnly</passability>
     <pathCost>50</pathCost>
     <minifiedDef>MinifiedThing</minifiedDef>
+    <tradeTags>
+      <li>Art</li>
+    </tradeTags>
     <thingCategories>
       <li>BuildingsArt</li>
     </thingCategories>
@@ -37,6 +40,7 @@
       <Flammability>1.0</Flammability>
       <MarketValue>200</MarketValue>
       <Mass>7.5</Mass>
+      <Beauty>40</Beauty>
     </statBases>
   </ThingDef>
   <ThingDef ParentName="BuildingBase">
