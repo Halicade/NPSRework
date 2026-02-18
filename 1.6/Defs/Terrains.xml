@@ -490,7 +490,7 @@
       <TKKN_BlockLava>20</TKKN_BlockLava>
     </costList>
   </TerrainDef>
-  <TerrainDef Abstract="True" ParentName="FloorBase" Name="SpecialPlankBase">
+  <TerrainDef Abstract="True" ParentName="FloorBase" Name="NPS_SpecialPlankBase">
     <renderPrecedence>220</renderPrecedence>
     <description>Carefully-cut and fit fancy planks. They are pretty to look at, but they take a long time to lay.</description>
     <texturePath>Terrain/Surfaces/WoodFloor</texturePath>
@@ -498,10 +498,9 @@
       <WorkToBuild>1100</WorkToBuild>
       <Beauty>1</Beauty>
     </statBases>
-    <designatorDropdown>NPS_Floor_Special_Plank</designatorDropdown>
     <constructionSkillPrerequisite>3</constructionSkillPrerequisite>
   </TerrainDef>
-  <TerrainDef ParentName="SpecialPlankBase">
+  <TerrainDef ParentName="NPS_SpecialPlankBase">
     <defName>TKKN_FloorRedWood</defName>
     <label>red wood floor</label>
     <texturePath>Terrain/Surfaces/WoodFloor</texturePath>
@@ -514,7 +513,7 @@
     </costList>
   </TerrainDef>
   <!--
-  <TerrainDef ParentName="SpecialPlankBase">
+  <TerrainDef ParentName="NPS_SpecialPlankBase">
     <defName>TKKN_FloorPertrifiedWood</defName>
     <label>petrified wood floor</label>
     <color>(66,44,4)</color>
